@@ -1,0 +1,26 @@
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes slideDiamonds {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        /* Moves the pattern down and to the left infinitely */
+        background-position: 40px 40px, -40px 40px; 
+    }
+}
+
+/* --- THE CONTAINER --- */
+.diamond-container {
+    position: relative;
+    padding: 60px 20px;
+    background-color: #002147; /* Navy Blue */
+    
+    /* This creates a pattern of small yellow diamonds */
+    background-image: 
+        repeating-linear-gradient(45deg, #FFD700 0, #FFD700 2px, transparent 0, transparent 40px),
+        repeating-linear-gradient(-45deg, #FFD700 0, #FFD700 2px, transparent 0, transparent 40px);
+    background-size: 40px 40px;
+    
+    /* This triggers the continuous diagonal movement */
+    animation: slideDiamonds 4s linear infinite;
+}
